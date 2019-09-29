@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static java.lang.Double.parseDouble;
+import static java.lang.Math.sqrt;
+
 public class MainActivity extends AppCompatActivity {
         public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btndec;
         public Button btnc, btnrt, btnpow, btnadd, btnsub, btnmul, btndiv, btnpercent, btnans;
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("calc");
 
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btnpow = findViewById(R.id.btnpow);
         btnpercent = findViewById(R.id.btnpercent);
         backspace = findViewById(R.id.btnbacks);
+        btnc = findViewById(R.id.btnc);
         input = findViewById(R.id.input);
         output = findViewById(R.id.output);
 
@@ -103,6 +108,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 input.setText(input.getText()+".");
+            }
+        });
+        btnc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                input.setText("");
+            }
+        });
+        btnadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                output.setText(input.getText());
             }
         });
     }
