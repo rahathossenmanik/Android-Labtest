@@ -105,11 +105,5 @@ public class MainActivity extends AppCompatActivity {
                 input.setText(input.getText()+".");
             }
         });
-        btnc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                input.setText("");
-            }
-        });
     }
 }
